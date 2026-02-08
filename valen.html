@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Valentine 💖</title>
+</head>
+
+<body style="
+  margin:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  background:#ffe6f0;
+  font-family:Arial;
+  text-align:center;
+  overflow:hidden;
+">
+
+  <div id="main">
+    <h1>Will you be my Valentine? 💌</h1>
+
+    <div style="margin-top:30px;">
+      <!-- YES -->
+      <button
+        id="yesBtn"
+        onclick="yesClick()"
+        style="
+          padding:15px 35px;
+          font-size:18px;
+          background:#ff4d6d;
+          color:white;
+          border:none;
+          border-radius:25px;
+          cursor:pointer;
+          margin-right:20px;
+        ">
+        YES 💖
+      </button>
+
+      <!-- NO -->
+      <button
+        id="noBtn"
+        onmouseover="moveNo()"
+        ontouchstart="moveNo()"
+        style="
+          padding:15px 35px;
+          font-size:18px;
+          background:#aaa;
+          color:white;
+          border:none;
+          border-radius:25px;
+          cursor:pointer;
+        ">
+        NO 😒
+      </button>
+    </div>
+  </div>
+
+  <!-- Hug Animation -->
+  <div id="hug" style="
+    display:none;
+    font-size:60px;
+    animation:hug 1s infinite alternate;
+  ">
+    🤗💖
+    <p style="font-size:24px;">A big hug just for you!</p>
+    🎁🍫🌸
+  </div>
+
+  <style>
+    @keyframes hug {
+      from { transform: scale(1); }
+      to   { transform: scale(1.2); }
+    }
+  </style>
+
+  <script>
+    function moveNo() {
+      const no = document.getElementById("noBtn");
+      no.style.position = "absolute";
+      no.style.left = Math.random() * 80 + "%";
+      no.style.top  = Math.random() * 80 + "%";
+    }
+
+    function yesClick() {
+      document.getElementById("main").style.display = "none";
+      document.getElementById("hug").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
